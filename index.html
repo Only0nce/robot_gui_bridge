@@ -5,7 +5,7 @@
   <title>rosbridge server</title>
   <meta charset="utf-8" />
   <!-- css-->
-  <link rel="stylesheet" href="index.css" >
+  <link rel="stylesheet" href="./index.css" >
 
   <!-- bootstrab-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
@@ -14,7 +14,7 @@
   <!-- Joystic-->
   <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/nipplejs/0.7.3/nipplejs.js"></script>
-  <script src="script.js"></script>
+  <script src="./script.js"></script>
 
 </head>
 
@@ -27,17 +27,19 @@
         <img src="./ros.png" alt="" width="250" height="50" class="d-inline-block align-text-top">
       </a>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a href="#member" class="btn btn-light btn-lg active" role="button" data-bs-toggle="modal" aria-pressed="true">Member</a>
-          </li>
-          <li class="nav-item">
-            <a href="#about" class="btn btn-light btn-lg active" role="button" data-bs-toggle="modal" aria-pressed="true">About</a>
-          </li>
-          <li class="nav-item"></li>
-          <div><b class="status">Connection status : <span id="status"></span></b></div>
-          </li>
-        </ul>
+        <div class="menu">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="#member" class="btn btn-light btn-lg active" role="button" data-bs-toggle="modal" aria-pressed="true">Member</a>
+            </li>
+            <li class="nav-item">
+              <a href="#about" class="btn btn-light btn-lg active" role="button" data-bs-toggle="modal" aria-pressed="true">About</a>
+            </li>
+            <li class="nav-item"></li>
+            <div><b class="status">Connection status : <span id="status"></span></b></div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </nav>
@@ -79,9 +81,28 @@
       </div>
     </div>
   </div>
+  <div class="container">
+    <div class="row row-cols-auto">
+      <div class="col"><ul class="nav flex-column">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link text-dark"  href="#"><p class="fs-4">Teleop</p></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark"  href="#"><p class="fs-4">Navigation</p></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark"  href="#"><p class="fs-4">Detect Lane</p></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark disabled"  href="#"><p class="fs-4 text-danger">Soon!</p></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
   <!-- Joystic-->
   <div id="zone_joystick" style="position: fixed; right:14%; bottom:21%;"></div>
-    
 </body>
 </html>

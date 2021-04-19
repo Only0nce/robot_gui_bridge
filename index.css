@@ -18,10 +18,22 @@ html,body {
 .nav-item{
   margin-left: 20px;
 }
+.menu a:hover{
+  color: orange;
+}
 
 /* modal */
+.modal-header{
+  background-color: whitesmoke;
+}
+
 .modal-body{
   text-align: center;
+  background-color: white;
+}
+
+.modal-footer{
+  background-color: whitesmoke;
 }
 
 /* connection status */
@@ -30,4 +42,12 @@ html,body {
   position: relative;
   top: 12px;
   left: 450px;
+}
+
+/* container */
+.container{
+  position: relative;
+  right: 80px;
+  top: 10px;
+  text-align: left;
 }
