@@ -1,0 +1,33 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html,body {
+    font-family: "Lucida Sans", sans-serif;
+    background-color: #FFFFFF;
+  }
+
+/* logo */
+.navbar-brand{
+  margin-left: 30px;
+  padding: 10px;
+}
+
+.nav-item{
+  margin-left: 20px;
+}
+
+/* modal */
+.modal-body{
+  text-align: center;
+}
+
+/* connection status */
+.status{
+  float: right;
+  position: relative;
+  top: 12px;
+  left: 450px;
+}

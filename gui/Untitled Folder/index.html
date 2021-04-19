@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Robot web application</title>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="index.css" >
+        <link rel="stylesheet" href="basic.css" >
+        <script src="joy.js"></script>
+    </head>
+    <body>
+        <section class="wave">
+            <div class="container"></div>
+                <div class="header">RobotControl</div>
+                <ul class="nav-area">
+                    <li><a href="/home/only/catkin_ws/src/robot_gui_bridge/gui/member.html">About Us</a></li>
+                </ul>
+            </div>
+        </section>
+        <div id="joy3Div" style="width:200px;height:200px;margin:50px;position:fixed;bottom:30px;left:900px;"></div>
+		<div style="position:fixed;bottom:125px;left:900px;">
+			X :<a id="joy3X"></a><br />
+			Y :<a id="joy3Y"></a>
+		</div>
+        <script type="text/javascript">
+        var joy3Param = { "title": "joystick3" };
+            var Joy3 = new JoyStick('joy3Div', joy3Param);
+            var joy3X = document.getElementById("joy3X");
+            var joy3Y = document.getElementById("joy3Y");
+            setInterval(function(){ joy3X.innerHTML=Joy3.GetX(); }, 50);
+            setInterval(function(){ joy3Y.innerHTML=Joy3.GetY(); }, 50);
+        </script>
+    <div class="state">Connection status: <span id="status"></span></div>
+    </body>
+</html>
