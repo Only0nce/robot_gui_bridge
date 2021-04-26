@@ -11,8 +11,8 @@ html,body {
 
 /* logo */
 .navbar-brand{
-  margin-left: 30px;
-  padding: 10px;
+  margin-left: 0%;
+  padding: 2%;
 }
 
 .nav-item{
@@ -40,8 +40,8 @@ html,body {
 .status{
   float: right;
   position: relative;
-  top: 12px;
-  left: 450px;
+  top: 25%;
+  left: 175%;
 }
 
 /* container */

@@ -17,7 +17,7 @@ ros.on('close', function () {
   document.getElementById("status").style.color = "#000000";
 });
 
-cmd_vel_listener = new ROSLIB.Topic({
+cmd_vel = new ROSLIB.Topic({
   ros: ros,
   name: "/cmd_vel",
   messageType: 'geometry_msgs/Twist'
@@ -36,7 +36,7 @@ move = function (linear, angular) {
       z: angular
     }
   });
-  cmd_vel_listener.publish(twist);
+  cmd_vel.publish(twist);
 }
 
 createJoystick = function () {
@@ -77,3 +77,4 @@ createJoystick = function () {
 window.onload = function () {
   createJoystick();
 }
+
