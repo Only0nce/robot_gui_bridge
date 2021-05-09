@@ -23,7 +23,18 @@ cmd_vel = new ROSLIB.Topic({
   messageType: 'geometry_msgs/Twist'
 });
 
+linear_global = []
+angular_global = []
+x_global = 0
+
 move = function (linear, angular) {
+  console.log(linear,angular)
+  if(x_global > 5){
+    update(linear,angular)
+    x_global = 0
+  }else{
+    x_global += 1
+  }
   var twist = new ROSLIB.Message({
     linear: {
       x: linear,
@@ -78,3 +89,56 @@ window.onload = function () {
   createJoystick();
 }
 
+const labels = [
+  '',
+  '',
+  '',
+  '',
+  '',
+  'x',
+];
+var data = {
+  labels: labels,
+  datasets: [{
+    label: 'linear',
+    backgroundColor: 'rgb(255, 99, 132)',
+    borderColor: 'rgb(255, 99, 132)',
+    data: [0, 0, 0, 0, 0, 0, 5],
+  },{
+    label: 'angular',
+    backgroundColor: 'rgb(0, 255, 255)',
+    borderColor: 'rgb(0, 255, 255)',
+    data: [0, 0, 0, 0, 0, 0, 0],
+  }]
+};
+
+var config = {
+  type: 'line',
+  data,
+  options: {}
+};
+console.log(config)
+function update(linear,angular){
+  linear_global.push(linear)
+  angular_global.push(angular)
+  if(linear_global.length > 5 && angular_global.length > 5){
+    linear_global.shift()
+    angular_global.shift()
+  } 
+  data["datasets"][0]["data"] = linear_global
+  data["datasets"][1]["data"] = angular_global
+  console.log(data)
+
+  config = {
+    type: 'line',
+    data,
+    options: {}
+  };
+
+  console.log(config)
+  myChart.destroy();
+  myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+}

@@ -51,3 +51,11 @@ html,body {
   top: 10px;
   text-align: left;
 }
+
+.chart{
+  width: 500px; 
+  height: 250; 
+  float: left; 
+  position: relative; 
+  top: 170px;
+}
